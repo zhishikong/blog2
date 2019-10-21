@@ -1,4 +1,4 @@
-$(function(){
+//$(function(){
 var Fireworks = function(){
 var self = this;
 var rand = function(rMi, rMa){return ~~((Math.random()*(rMa-rMi+1))+rMi);}
@@ -8,25 +8,25 @@ window.requestAnimFrame=function(){return window.requestAnimationFrame||window.w
 self.init = function(){ 
 self.canvas = document.createElement('canvas'); 
 self.canvas.width = self.cw = $(window).innerWidth();
-self.canvas.height = self.ch = $(document).height(); 
+self.canvas.height = self.ch = $(document).height()- 50; 
 //给canvas添加类名
 self.canvas.classList.add('yanhua');  
  
 self.particles = [];    
-self.partCount = 150;
+self.partCount = 200;
 self.fireworks = [];    
 self.mx = self.cw/2;
 self.my = self.ch/2;
 self.currentHue = 30;
-self.partSpeed = 10;
-self.partSpeedVariance = 5;
+self.partSpeed = 5;
+self.partSpeedVariance = 10;
 self.partWind = 50;
 self.partFriction = 5;
-self.partGravity = 1;
+self.partGravity = 4;
 self.hueMin = 0;
 self.hueMax = 360;
 //烟花速度
-self.fworkSpeed = 16;
+self.fworkSpeed = 4;
 self.fworkAccel = 10;
 self.hueVariance = 30;
 self.flickerDensity = 25;
@@ -312,8 +312,8 @@ self.init();
 }
 var fworks = new Fireworks();   //烟花实例
 
-});
+/*});*/
 
 
-console.log('yanhua.js的console.log')
-export default {}
+//console.log('yanhua.js的console.log')
+export default {fworks}
